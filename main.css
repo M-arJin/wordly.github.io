@@ -1,0 +1,162 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc; /* Light background, similar to light gray */
+    color: #2d3748; /* Dark gray, for good contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    min-height: 100vh; /* Ensure full viewport height */
+    justify-content: flex-start; /* Align items to the start (top in column direction) */
+}
+
+h1 {
+    font-size: 3em; /* Large and modern heading */
+    color: #4a5568; /* Slightly darker heading */
+    margin-bottom: 2rem; /* Increased margin below heading */
+    letter-spacing: -0.05em;
+    font-weight: 600; /* Semi-bold font weight */
+    text-align: center; /* Center the heading */
+}
+
+#gameScreen {
+    display: flex;
+    flex-direction: column; /* Stack rounds vertically */
+    align-items: center; /* Center each round horizontally */
+    margin-bottom: 2rem; /* Increased margin below game screen */
+}
+
+.RoundDiv {
+    display: flex;
+    gap: 0.5rem; /* Consistent gap between letter boxes */
+    margin-bottom: 0.5rem; /* Space between rounds */
+}
+
+.LetterDiv {
+    width: 64px; /* Larger square size (64px is a good base for modern UIs) */
+    height: 64px;
+    border: 2px solid #e2e8f0; /* Light border, subtle */
+    border-radius: 6px; /* Slightly rounded corners */
+    font-size: 2em; /* Large font size for letters */
+    color: #2d3748; /* Dark letter color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase; /* Ensure letters are uppercase */
+    background-color: white; /* White background for letter boxes */
+    transition: background-color 0.3s ease; /* Smooth transition for color changes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.LetterDiv h1{
+    font-size: 2em;
+}
+
+.LetterDiv.correct {
+    background-color: #51e885; /* Bright green for correct letters */
+    border-color: #51e885;
+    color: white;
+}
+
+.LetterDiv.present {
+    background-color: #fcba03; /* Yellow for present letters */
+    border-color: #fcba03;
+    color: white;
+}
+
+.LetterDiv.absent {
+    background-color: #a0aec0; /* Gray for absent letters */
+    border-color: #a0aec0;
+    color: white;
+}
+
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the keyboard */
+    gap: 0.5rem; /* Space between keyboard rows */
+    width: 100%; /* Make keyboard container full width */
+    max-width: 500px; /* Maximum width for the keyboard */
+}
+
+.layer {
+    display: flex;
+    gap: 0.5rem; /* Space between keys in a row */
+    width: 100%; /* Make each layer full width of keyboard container */
+    justify-content: center; /* center the keys */
+}
+
+.characterDiv {
+    width: 48px; /* Slightly smaller keys */
+    height: 48px;
+    border: none; /* Remove border, or use a very light one */
+    border-radius: 6px; /* Slightly rounded corners */
+    font-size: 1.3em; /* Smaller font size for keys */
+    color: #2d3748; /* Dark text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #edf2f7; /* Very light gray for keys */
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Added box-shadow */
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+.characterDiv h1{
+    font-size: 1.3em;
+}
+
+.characterDiv:hover {
+    background-color: #d3d6da; /* Slightly darker hover color */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Increased shadow on hover */
+}
+
+.characterDiv.correct {
+    background-color: #51e885;
+    color: white;
+}
+
+.characterDiv.present {
+    background-color: #fcba03;
+    color: white;
+}
+
+.characterDiv.absent {
+    background-color: #a0aec0;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* Smaller heading on mobile */
+    }
+
+    .LetterDiv {
+        width: 48px; /* Smaller letter boxes on mobile */
+        height: 48px;
+        font-size: 1.5em; /* Smaller font on mobile */
+    }
+    .LetterDiv h1{
+        font-size: 1.5em;
+    }
+
+    .characterDiv {
+        width: 36px; /* Smaller keys on mobile */
+        height: 36px;
+        font-size: 0.9em; /* Smaller key font on mobile */
+    }
+    .characterDiv h1{
+        font-size: 0.9em;
+    }
+
+    #keyboard {
+        max-width: 100%;
+    }
+    .layer{
+        gap: 0.2rem;
+    }
+}
